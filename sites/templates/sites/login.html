@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}Log In{% endblock %}
+{% block content %}
+<div class="col-xs-8" style="background-color: maroon">
+    {% load crispy_forms_tags %}
+    <form action="" method="post" novalidate style="color: white">{% csrf_token %}
+        <h4 style="color: white">{{ form | crispy }}</h4>
+        <input type="submit" value="Log In" class="btn btn-success">
+    </form>
+    <h3 style="color: white">{{ msg }}</h3>
+</div>
+{% endblock %}

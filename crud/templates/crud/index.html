@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block title %}VTU Colleges{% endblock %}
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+          <th>College Name</th>
+        <th>Email ID</th>
+        <th>Address</th>
+          <th>City</th>
+          <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.college_name }}</td>
+        <td>{{ i.college_email }}</td>
+        <td>{{ i.college_address }}</td>
+        <td>{{ i.college_city }}</td>
+        <td>
+            <a href="view?id={{i.id}}" target="_blank" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-list"></span> View</a>
+            <a href="update?id={{i.id}}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> Update</a>
+            <a onclick="return deleteItem()" href="delete?id={{i.id}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+        <script>
+            function deleteItem(){
+                if(confirm('Are you sure to delete this item ?')){
+                    return true;
+                    }
+                else{
+                    return false;
+                    }
+            }
+        </script>
+{% endblock %}

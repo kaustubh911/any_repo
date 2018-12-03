@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STATIC</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/new.css' %}">
+    <script src="{% static 'js/new.js' %}" type="text/javascript"></script>
+    <style>
+        .in{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<h1>Static File Management !</h1>
+<img src="{% static 'images/alienware.jpeg' %}" width="35%">
+<h2 style="color: red;">Inline css....</h2>
+<h1 class="in">Internal css....</h1>
+<h2 class="ext1">External css....</h2>
+<button onclick="clickMe_1()">Button 1</button>
+<button onclick="clickMe_2()">Button 2</button>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}Log In{% endblock %}
+{% block content %}
+<div class="col-xs-8" style="background-color: maroon; color: white">
+    {% if request.user.username %}
+    <h3>Username: {{ request.user.username }}</h3>
+    <h3>City: {{ request.session.college_city }}</h3>
+    <h3>Address: {{ request.session.college_address }}</h3>
+    <h3>Hashed Password: {{ request.user.password }}</h3>
+    <h4><a href="{% url 'logout' %}">logout ({{ request.user.username }})</a></h4>
+    {% else %}
+    <h4><a href="{% url 'login' %}"><h3 style="text-transform: uppercase">log in again</a></h4>
+    {% endif %}
+</div>
+{% endblock %}

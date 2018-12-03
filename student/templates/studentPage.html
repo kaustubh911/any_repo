@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>myStudentApp</title>-->
+<!--</head>-->
+<!--<body>-->
+{% block title %}
+studentPage
+{% endblock %}
+{% block content %}
+<h1>This is my my student app !</h1>
+<h3>Students list :</h3>
+<ul>
+    <li>Mohit</li>
+    <li>Vikash</li>
+    <li>Chaitanya</li>
+    <li>{{ name }}</li>
+</ul>
+Contact : {{ email_id }}
+<hr>
+<!--{{ l1.1 }}-->
+<!--Place : {{ d2.city }}-->
+<!--{{ d2.address }}-->
+<!--<hr>-->
+<!--{% for i in l1 %}-->
+<!--<h3>{{ i }}</h3>-->
+<!--{% endfor %}-->
+<!--{% for x,y in d2.items %}-->
+<!--<h3>{{ x }} : {{ y }}</h3>-->
+<!--{% endfor %}-->
+<!--{% for i in d2.values %}-->
+<!--<h4>{{ i }}</h4>-->
+<!--{% endfor %}-->
+{% if name == '' %}
+<h3>Empty...</h3>
+{% else %}
+<h3>Name : {{ name }}</h3>
+{% endif %}
+{% endblock %}
+<!--</body>-->
+<!--</html>-->
